@@ -2287,6 +2287,7 @@ strip:
 	$(CROSS_COMPILE)strip $(MODULE_NAME).ko --strip-unneeded
 
 install:
+	mkdir /lib/modules/${KVER}/kernel/drivers/net/wireless/ -p
 	install -p -m 644 $(MODULE_NAME).ko  $(MODDESTDIR)
 	/sbin/depmod -a ${KVER}
 
